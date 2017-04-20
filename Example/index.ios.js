@@ -35,7 +35,7 @@ export default class ChinaRegionModalPickerTest extends Component {
           <TextInput
             style={{ backgroundColor: '#FFF', width: 200, paddingVertical: 20, textAlign: 'center' }}
             editable={false}
-            placeholder="点击去选择地区"
+            placeholder="انتخاب محله"
             value={this.state.region1}
           />
         </ChinaRegionWheelPicker>
@@ -44,9 +44,9 @@ export default class ChinaRegionModalPickerTest extends Component {
         <ChinaRegionWheelPicker
           isVisible={this.state.isPickerVisible}
           navBtnColor={'red'}
-          selectedProvince={'广东'}
-          selectedCity={'深圳'}
-          selectedArea={'福田区'}
+          selectedProvince={'تهران'}
+          selectedCity={'تهران'}
+          selectedArea={'تجریش'}
           transparent
           animationType={'fade'}
           onSubmit={this._onPressSubmit.bind(this)}
@@ -58,7 +58,7 @@ export default class ChinaRegionModalPickerTest extends Component {
           style={{ marginTop: 50, backgroundColor: 'red', padding: 10, borderRadius: 6 }}
           onPress={this._onPress2Show.bind(this)}
         >
-          <Text style={{ color: 'white' }}>{this.state.region2 || '点击去选择地区' }</Text>
+          <Text style={{ color: 'white' }}>{this.state.region2 || 'انتخاب محله' }</Text>
         </TouchableOpacity>
       </View>
     );
