@@ -152,7 +152,7 @@ export default class IranRegionWheelPicker extends BaseComponent {
                             [styles.navBtn, {backgroundColor: navBtnColor, borderColor: navBtnColor}] }
                                           activeOpacity={ 0.85 }
                                           onPress={ this._handleSubmit }>
-                            <Text style={[styles.text, {color: 'black'}] }> تایید</Text>
+                            <Text style={[styles.text, {color: navBtnColor}] }> تایید</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={
                             [styles.navBtn, {borderColor: navBtnColor}] }
@@ -162,18 +162,19 @@ export default class IranRegionWheelPicker extends BaseComponent {
                         </TouchableOpacity>
                     </View>
                     <View style={ styles.pickerWrap }>
-                        {(this.props.isShowArea && this.state.areas) && <Picker
-                            style={ styles.pickerItem }
-                            onValueChange={ this._handleAreaChange }
-                            selectedValue={ this.state.selectedArea }>
-                            {this.state.areas.map((area, index) => {
-                                return ( <Picker.Item value={ area }
-                                                      label={ area }
-                                                      key={ index }
-                                    />
-                                );
-                            })}
-                        </Picker>}
+                        {this.state.areas ? this.props.isShowArea && <Picker
+                                style={ styles.pickerItem }
+                                onValueChange={ this._handleAreaChange }
+                                selectedValue={ this.state.selectedArea }>
+                                {this.state.areas.map((area, index) => {
+                                    return ( <Picker.Item
+                                            value={ area }
+                                            label={ area }
+                                            key={ index }
+                                        />
+                                    );
+                                })}
+                            </Picker> : <View style={ styles.pickerItem }></View>}
                         <Picker style={ styles.pickerItem }
                                 onValueChange={ this._handleCityChange }
                                 selectedValue={ this.state.selectedCity }>
@@ -259,7 +260,7 @@ const styles = StyleSheet.create({
         height: windowHeight,
         left: 0,
         position: 'absolute',
-        backgroundColor: 'rgba(0, 0, 0, 0.65)',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
     pickerContainer: {
         flex: 1,
@@ -274,13 +275,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         borderBottomWidth: 1,
         borderTopWidth: 1,
-        borderColor: '#ccc'
+        borderColor: '#ddd',
+        backgroundColor: '#eee'
     },
     navBtn: {
         paddingVertical: 5,
         paddingHorizontal: 20,
         borderWidth: 1,
-        borderRadius: 4
+        borderRadius: 3,
+        backgroundColor: '#eee',
+        borderColor: '#dddddd'
     },
     text: {
         fontSize: 18,
