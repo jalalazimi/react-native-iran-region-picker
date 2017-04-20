@@ -1,6 +1,6 @@
 {
   "name": "react-native-iran-region-picker",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "a modal picker(wheel) of Iran province & city & region ",
   "main": "./lib/index.js",
   "scripts": {
