@@ -162,6 +162,27 @@ export default class IranRegionWheelPicker extends BaseComponent {
                         </TouchableOpacity>
                     </View>
                     <View style={ styles.pickerWrap }>
+                        <Picker style={styles.pickerItem }
+                                onValueChange={ this._handleProvinceChange }
+                                selectedValue={ this.state.selectedProvince }>
+                            {this.state.provinces.map((province, index) => {
+                                return ( <Picker.Item value={ province }
+                                                      label={ province }
+                                                      key={ index }
+                                    />
+                                );
+                            })}
+                        </Picker>
+                        <Picker style={ styles.pickerItem }
+                                onValueChange={ this._handleCityChange }
+                                selectedValue={ this.state.selectedCity }>
+                            {this.state.cities.map((city, index) => {
+                                return ( <Picker.Item value={ city }
+                                                      label={ city }
+                                                      key={ index }/>
+                                );
+                            })}
+                        </Picker>
                         {this.state.areas ? this.props.isShowArea && <Picker
                                 style={ styles.pickerItem }
                                 onValueChange={ this._handleAreaChange }
@@ -175,27 +196,6 @@ export default class IranRegionWheelPicker extends BaseComponent {
                                     );
                                 })}
                             </Picker> : <View style={ styles.pickerItem }></View>}
-                        <Picker style={ styles.pickerItem }
-                                onValueChange={ this._handleCityChange }
-                                selectedValue={ this.state.selectedCity }>
-                            {this.state.cities.map((city, index) => {
-                                return ( <Picker.Item value={ city }
-                                                      label={ city }
-                                                      key={ index }/>
-                                );
-                            })}
-                        </Picker>
-                        <Picker style={styles.pickerItem }
-                                onValueChange={ this._handleProvinceChange }
-                                selectedValue={ this.state.selectedProvince }>
-                            {this.state.provinces.map((province, index) => {
-                                return ( <Picker.Item value={ province }
-                                                      label={ province }
-                                                      key={ index }
-                                    />
-                                );
-                            })}
-                        </Picker>
                     </View>
                 </View>
             </View>
