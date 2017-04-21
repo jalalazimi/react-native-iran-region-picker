@@ -70,5 +70,3 @@ import IranRegionWheelPicker from 'react-native-iran-region-picker';
 </TouchableOpacity>
 
 ```
-
-# react-native-iran-region-picker
