@@ -19,7 +19,7 @@
     "region",
     "area"
   ],
-  "author": "mqy1023",
+  "author": "Jalal Azimi <jalalazimi@gmail.com> (http://jalalazimi.me/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jalalazimi/react-native-iran-region-picker/issues"
