@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, TextInput, AppRegistry } from 'react-native';
-import ChinaRegionWheelPicker from './lib/index';
+import IranRegionWheelPicker from './lib/index';
 
-export default class ChinaRegionModalPickerTest extends Component {
+export default class IranRegionModalPickerTest extends Component {
 
   constructor(props) {
     super(props);
@@ -28,7 +28,7 @@ export default class ChinaRegionModalPickerTest extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ChinaRegionWheelPicker
+        <IranRegionWheelPicker
           onSubmit={(params) => this.setState({ region1: `${params.province},${params.city},${params.area}` })}
           onCancel={() => console.log('cancel')}
         >
@@ -38,10 +38,10 @@ export default class ChinaRegionModalPickerTest extends Component {
             placeholder="انتخاب محله"
             value={this.state.region1}
           />
-        </ChinaRegionWheelPicker>
+        </IranRegionWheelPicker>
 
 
-        <ChinaRegionWheelPicker
+        <IranRegionWheelPicker
           isVisible={this.state.isPickerVisible}
           navBtnColor={'red'}
           selectedProvince={'تهران'}
@@ -74,4 +74,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('AwesomeProject', () => ChinaRegionModalPickerTest);
+AppRegistry.registerComponent('AwesomeProject', () => IranRegionModalPickerTest);
