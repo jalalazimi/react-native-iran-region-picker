@@ -21,7 +21,13 @@ androidPickerHeight: PropTypes.number
 ```
 
 ## Install
+```
+yarn add react-native-iran-region-picker
+```
+or
+```
 npm install react-native-iran-region-picker --save
+```
 
 ## Usage
 ```javascript
